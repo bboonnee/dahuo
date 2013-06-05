@@ -1,0 +1,53 @@
+{
+    "name":"MBAPeople",
+    "indexHtmlPath":"index.html",
+    "url":null,
+    "js":[
+        {
+            "path":"touch/sencha-touch.js",
+            "x-bootstrap":true
+        },
+        {
+            "path":"app.js",
+            "bundle":true,
+            "update":"full"
+        }
+    ],
+    "css":[
+        {
+            "path":"resources/css/app.css",
+            "update":"full"
+        }
+    ],
+    "appCache":{
+        "cache":[
+            "index.html",
+            "classno.json",
+            "resources/img/ic_contact.png",
+            "resources/img/tasklist.png"
+        ],
+        "network":[
+            "*"
+        ],
+        "fallback":[]
+    },
+    "resources":[
+        "resources/img",
+        "resources/icons",
+        "resources/startup",
+        "resources/js",
+        "classno.json",
+        "getfile.php"
+    ],
+    "ignore":[
+        "\.svn$"
+    ],
+    "archivePath":"archive",
+    "id":"3bc243a7-beaf-4ea0-be2c-71f3ea413779",
+    "buildOptions:": {
+        "product": "touch",
+        "minVersion": 3,
+        "debug": true,
+        "logger": true
+    }
+}

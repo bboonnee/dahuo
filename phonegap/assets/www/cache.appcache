@@ -1,0 +1,16 @@
+CACHE MANIFEST
+# 1065b10b3a35217eb2181d8781c38c105c9209b8
+index.html
+# ee58408c17123a1f0168c3dbb9544a91b0f1531f
+classno.json
+# 7af74f4459b0bbc0b284f8772279e902f7cc1967
+resources/img/ic_contact.png
+# b4218fb1a8360197aa0b295e283f018e7e89541f
+resources/img/tasklist.png
+
+
+FALLBACK:
+
+
+NETWORK:
+*
