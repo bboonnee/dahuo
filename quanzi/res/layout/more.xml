@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:background="@color/bg">
+	>
+	<include layout="@layout/topbar" />
+	<ListView 
+			android:id="@+id/morelist"			
+			android:background="@color/black"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" 
+			android:layout_below="@+id/topbarLayout"						
+			android:divider="@drawable/divider"			
+			android:dividerHeight="2px" android:layout_margin="2px"
+			android:cacheColorHint="#00000000"
+			android:fastScrollEnabled="true"
+			android:layout_marginTop="5dp" android:layout_marginLeft="5dp" 
+			android:layout_marginRight="5dp" android:layout_marginBottom="5dp"			
+			android:focusable="true">
+	</ListView>			
+		
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <color name="white">#FFFFFF</color>
+        <color name="black">#000000</color>
+        <color name="yellow">#FEF693</color>
+        <color name="blue">#0000FF</color>
+        <color name="red">#FF0000</color>
+        <color name="deep_yellow">#FF9900</color>
+        <color name="weak_yellow">#FE9B21</color>
+        <color name="tollbar_text_color">#B1B1B1</color>
+        <color name="grey">#bbb</color>
+        <color name="layoutbar">#BB768e95</color>
+        <color name="tsinghuablue">#113478</color>
+        <color name="bottomlayout">#2E2E2E</color>
+        <color name="bg">#171717</color>        
+        <color name="icon">#439AC1</color>
+        
+
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:background="@color/bg">
+	<ScrollView android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+		<LinearLayout android:id="@+id/msglayout"
+			android:layout_width="fill_parent" android:layout_height="fill_parent"
+			android:orientation="vertical">
+			<include layout="@layout/topbar" />
+			<LinearLayout android:id="@+id/spinnerLayout"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<TextView android:text="选择群发圈子" android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:layout_marginTop="15dp"
+					android:layout_marginLeft="5dp" android:gravity="center">
+				</TextView>
+			</LinearLayout>
+			<EditText android:id="@+id/etmsg" android:inputType="textMultiLine"
+				android:layout_height="wrap_content" android:layout_width="fill_parent"
+				android:hint="请输入内容" android:layout_margin="5dp" android:gravity="top"
+				android:minLines="13">
+				<requestFocus></requestFocus>
+			</EditText>
+			<RelativeLayout 
+				android:layout_width="fill_parent" android:layout_height="fill_parent"
+				android:background="@color/bg">
+				<Button android:layout_height="wrap_content" android:id="@+id/bnsendnewmsg"
+					android:layout_width="wrap_content" 
+					android:layout_alignParentRight="true"
+					android:text="发送" android:layout_marginRight="50dp"></Button>
+			</RelativeLayout>
+			
+		</LinearLayout>
+	</ScrollView>
+</RelativeLayout>
+	
+
+

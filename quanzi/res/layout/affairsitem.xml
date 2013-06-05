@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <include layout="@layout/topbar" />
+
+        <LinearLayout            
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8px"
+            android:orientation="vertical"
+            android:textSize="15dp" 
+            android:padding = "10dp" 
+            >
+
+            <RelativeLayout
+                android:id="@+id/afflayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android1:background="@color/bottomlayout"
+                android:orientation="vertical"                
+                >
+
+                <TextView
+                    android:id="@+id/affname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:text="Name"
+                    android:textSize="15dp"
+                    android:textStyle="bold" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/afftime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/affname"
+                    android:paddingTop="5dp"
+                    android:text="2011.9.17 18：30"
+                    android:textSize="10dp" >
+                </TextView>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/affcontent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/afflayout"
+                android:layout_marginTop="10dp"
+                android:padding="15dp"
+                android:text="今天晚上大家踢球，在西操场，3点半，请准时参加。具体联系人李元春 1391111111"
+                android:textSize="15dp" 
+                android1:background="@color/bottomlayout"
+                >
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

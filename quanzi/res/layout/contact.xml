@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+        <ImageView 
+        android:id="@+id/usericon" 
+        android:src="@drawable/mba_s" 
+        android:layout_height="64dp" 
+        android:layout_width="64dp"         
+        android:layout_alignParentLeft="true"
+        android:layout_margin="5px"
+        >
+        </ImageView>
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    	android:orientation="vertical"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_toRightOf="@+id/usericon"
+		    >
+        <TextView 
+        	android:layout_height="wrap_content" 
+        	android:id="@+id/tvname" 
+        	android:layout_width="wrap_content" 
+        	android:text="username" 
+        	android:textSize="15dp"
+        	android:textStyle="bold"
+        	android:layout_alignParentLeft="true"        	 
+        	>
+       </TextView>
+        <TextView 
+	        android:layout_height="wrap_content" 
+	        android:id="@+id/tvclass" 
+	        android:layout_width="wrap_content" 
+	        android:text="class" 	        
+	        android:layout_alignParentRight="true"
+	        android:layout_alignBaseline="@+id/tvname"
+	        >
+        </TextView>
+        <TextView 
+        android:layout_height="wrap_content" 
+        android:id="@+id/tvmobile" 
+        android:layout_width="wrap_content" 
+        android:text="mobile"        
+        android:layout_below="@+id/tvname"
+        android:layout_alignParentLeft="true"
+		>
+        </TextView>
+        <TextView 
+        android:layout_height="wrap_content" 
+        android:id="@+id/tvlocation" 
+        android:layout_width="wrap_content" 
+        android:text="location"
+        android:layout_below="@+id/tvmobile"        
+        >
+        </TextView>
+
+     </RelativeLayout>   
+
+</LinearLayout>

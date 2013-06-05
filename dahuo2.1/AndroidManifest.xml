@@ -80,14 +80,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.tuifi.dahuo.Activity_msglist"
-            android:label="@string/title_activity_activity_msglist" >
-        </activity>
-        <activity
-            android:name="com.tuifi.dahuo.SearchActivity_shop"
-            android:label="@string/title_activity_search_activity_shop" >
-        </activity>
+        <activity android:name="com.tuifi.dahuo.Activity_msglist" />        
+        <activity android:name="com.tuifi.dahuo.SearchActivity_shop" />
+        <activity android:name="com.tuifi.dahuo.SearchActivity_car" />
+        <activity android:name="com.tuifi.dahuo.SearchActivity_post" />
+        
     </application>
 
 </manifest>

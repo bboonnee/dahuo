@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:background="@color/bg">
+	
+	<ScrollView 
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		>
+		<LinearLayout android:id="@+id/msglayout"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:orientation="vertical" >
+			<include layout="@layout/topbar" />
+			<RelativeLayout android:id="@+id/spinnerLayout"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"				 
+				android:orientation="horizontal">
+				<TextView android:text="当前圈子:" android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:layout_marginTop="15dp"
+					android:layout_marginLeft="5dp" android:gravity="center">
+				</TextView>
+			</RelativeLayout>
+			<EditText android:id="@+id/hdname" android:layout_height="wrap_content"
+				android:layout_width="fill_parent" android:hint="请输入活动名称"
+				android:layout_margin="5dp" android:layout_below="@+id/spinnerLayout"
+				android:minLines="1">
+				<requestFocus></requestFocus>
+			</EditText>
+			<EditText android:id="@+id/hdloc" android:layout_height="wrap_content"
+				android:layout_width="fill_parent" android:hint="请输入活动地点"
+				android:layout_margin="5dp" android:layout_below="@+id/spinnerLayout"
+				android:minLines="1">
+				<requestFocus></requestFocus>
+			</EditText>
+			<EditText android:id="@+id/hdtime" android:layout_height="wrap_content"
+				android:layout_width="fill_parent" android:hint="请输入活动时间"
+				android:layout_margin="5dp" android:layout_below="@+id/spinnerLayout"
+				android:minLines="1">
+				<requestFocus></requestFocus>
+			</EditText>
+			<EditText android:id="@+id/hdcontent" android:layout_height="wrap_content"
+				android:layout_width="fill_parent" android:hint="请输入活动内容"
+				android:layout_margin="5dp" android:layout_below="@+id/spinnerLayout"
+				android:minLines="3">
+				<requestFocus></requestFocus>
+			</EditText>
+			<Button android:layout_height="wrap_content" android:id="@+id/bnsendnewhuodong"
+				android:layout_width="wrap_content" android:layout_below="@+id/etmsg"
+				android:layout_marginTop="5dp" android:text="新建活动"
+				android:layout_alignParentRight="true" android:layout_marginLeft="200dp"></Button>
+				
+		</LinearLayout>
+
+	</ScrollView>
+	
+</RelativeLayout>
+

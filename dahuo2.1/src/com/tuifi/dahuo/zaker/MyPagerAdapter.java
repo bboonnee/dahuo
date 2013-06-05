@@ -10,7 +10,6 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
@@ -25,12 +24,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.tuifi.dahuo.R;
-import com.tuifi.dahuo.app.MainActivity;
+import com.tuifi.dahuo.SearchActivity_car;
+import com.tuifi.dahuo.SearchActivity_post;
+import com.tuifi.dahuo.SearchActivity_shop;
 import com.tuifi.dahuo.app.TabActivity_list;
 import com.tuifi.dahuo.app.TabActivity_map;
+import com.tuifi.dahuo.app.TabActivity_msg;
 import com.tuifi.dahuo.app.TabActivity_post;
 import com.tuifi.dahuo.app.TabActivity_pref;
-import com.tuifi.dahuo.app.TabActivity_search;
 
 /**
  * 自定义适配器
@@ -126,55 +127,61 @@ public class MyPagerAdapter extends PagerAdapter {
 				Log.i("TAG", "-----" + position + "===" + id);
 				Intent mainIntent = new Intent();
 				switch (position) {
+				// 搜索货源
 				case 0:
-					
-					mainIntent.setClass(v.getContext(), TabActivity_list.class);
+					mainIntent.setClass(v.getContext(),
+							SearchActivity_post.class);
 					v.getContext().startActivity(mainIntent);
 					break;
+				// 搜索车辆
 				case 1:
-					mainIntent.setClass(v.getContext(), TabActivity_search.class);
+					mainIntent.setClass(v.getContext(),
+							SearchActivity_car.class);
 					v.getContext().startActivity(mainIntent);
 					break;
+				// 搜索信息部
 				case 2:
+					mainIntent.setClass(v.getContext(),
+							SearchActivity_shop.class);
+					v.getContext().startActivity(mainIntent);
+					break;
+				//发布信息
+				case 3:
 					mainIntent.setClass(v.getContext(), TabActivity_post.class);
 					v.getContext().startActivity(mainIntent);
 					break;
-				case 3:
+					//周边地图
+				case 4:
 					mainIntent.setClass(v.getContext(), TabActivity_map.class);
 					v.getContext().startActivity(mainIntent);
 					break;
-				case 4:
+					//个人中心
+				case 5:
 					mainIntent.setClass(v.getContext(), TabActivity_pref.class);
 					v.getContext().startActivity(mainIntent);
 					break;
-				case 5:
-					mainIntent.setClass(v.getContext(), MainActivity.class);
-					v.getContext().startActivity(mainIntent);
-					break;
+					//收藏历史
 				case 6:
-					mainIntent.setClass(v.getContext(), MainActivity.class);
+					mainIntent.setClass(v.getContext(), TabActivity_list.class);
 					v.getContext().startActivity(mainIntent);
 					break;
+					//推送信息
 				case 7:
-					mainIntent.setClass(v.getContext(), MainActivity.class);
+					mainIntent.setClass(v.getContext(), TabActivity_msg.class);
 					v.getContext().startActivity(mainIntent);
-					break;
-				default:
-					mainIntent.setClass(v.getContext(), MainActivity.class);
-					v.getContext().startActivity(mainIntent);
-					break;
+					break;				
 
 				}
-				
+
 			}
 		});
-		/*gridView.setOnTouchListener(new View.OnTouchListener() {
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-
-				return true;
-			}
-		});*/
+		/*
+		 * gridView.setOnTouchListener(new View.OnTouchListener() {
+		 * 
+		 * @Override public boolean onTouch(View v, MotionEvent event) {
+		 * 
+		 * return true; } });
+		 */
 		((ViewPager) container).addView(view);
 
 		return view;

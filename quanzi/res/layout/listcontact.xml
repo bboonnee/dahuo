@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:background="@color/bg">
+	
+	<include layout="@layout/topbar" />
+
+	<!-- 定义一个Gallery组件 -->
+	<MultiAutoCompleteTextView android:id="@+id/multitv"
+		android:layout_width="fill_parent" android:hint="输入名称，电话，邮件地址进行查询"
+		android:textSize="15dp" android:layout_height="wrap_content"
+		android:layout_below="@+id/topbarLayout"
+		android:layout_centerHorizontal="true">
+	</MultiAutoCompleteTextView>
+
+	<ListView android:id="@+id/plist" 
+		android:layout_height="match_parent"
+		android:layout_width="fill_parent"
+		android:divider="@drawable/divider"
+		android:dividerHeight="2px" android:layout_margin="2px"		
+		android:fastScrollEnabled="true" android:focusable="true"
+		android:layout_below="@+id/multitv" 
+		>
+	</ListView>
+	
+	
+
+
+</RelativeLayout>
+

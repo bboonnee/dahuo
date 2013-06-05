@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="wrap_content" 
+	 >
+	<RelativeLayout 
+		android:orientation="vertical" android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:padding="10dp" android:layout_margin="10dp">
+		<TextView android:layout_height="wrap_content"
+			android:layout_width="wrap_content" android:id="@+id/msgitemsender"			
+			android:textStyle="bold"
+			android:textSize="20dp"
+			android:text="Sender" android:layout_alignParentLeft="true">
+		</TextView>
+		<TextView android:layout_height="wrap_content"
+			android:layout_width="wrap_content" android:id="@+id/msgitemtime"
+			android:textSize="10dp"
+			android:text="2011.9.17 18：30" android:layout_alignParentRight="true">
+		</TextView>
+		<TextView android:layout_height="wrap_content"
+			android:layout_width="wrap_content" android:id="@+id/msgitemcontent"
+			android:text="今天晚上大家踢球，在西操场，3点半，请准时参加。具体联系人李元春 1391111111"
+			android:textSize="15dp"			
+			android:layout_marginTop="10dp"
+			android:layout_below="@+id/msgitemsender" >
+		</TextView>
+
+	</RelativeLayout>
+</RelativeLayout>   

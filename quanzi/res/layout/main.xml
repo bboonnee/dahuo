@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:background="@color/bg">
+	<include layout="@layout/topbar" />
+	<include android:id="@+id/homeprogress" layout="@layout/progress"/>
+	<!-- 定义一个Gallery组件 -->
+	<Gallery android:id="@+id/gallery" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:layout_marginTop="10dp"
+		android:unselectedAlpha="1" android:spacing="3pt"
+		android:layout_below="@+id/topbarLayout" />
+	<RelativeLayout
+		android:id="@+id/quanzidetail"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/gallery" 
+		>
+	<TextView
+	android:id="@+id/tvdes" android:text="@string/nodata"
+	android:layout_height="wrap_content" android:layout_width="fill_parent"	
+	android:layout_alignParentLeft="true"
+	>
+	</TextView>
+	</RelativeLayout>
+	
+	
+</RelativeLayout>

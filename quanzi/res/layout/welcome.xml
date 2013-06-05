@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/tsinghuablue"
+    android:layout_gravity="center"
+    android:id="@+id/welcomelayout"
+    >
+        <ImageView android:layout_gravity="center"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"	
+		    android:background="@drawable/tsinghua"	    
+		    android:layout_margin="10dp"
+		    >
+	    </ImageView>
+	    <ImageView android:layout_gravity="center"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"	
+		    android:background="@drawable/mba_l"
+		    android:layout_margin="50dp"	    
+		    >
+	    </ImageView>
+        <TextView 
+        android:layout_width="wrap_content"         
+        android:layout_height="wrap_content" 
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:textSize="35dp"
+        android:text="MBA圈子">
+        </TextView>
+        <TextView 
+        android:layout_width="wrap_content"         
+        android:layout_height="wrap_content" 
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:textSize="20dp"        
+        android:text="必须有一个网络，把所有的MBA联系在一起">
+        </TextView>        
+</LinearLayout>

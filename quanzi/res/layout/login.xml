@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout    xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"   
+    >    
+    <include layout="@layout/topbar" />
+    
+	<EditText android:layout_height="40dp" android:inputType="phone"
+		android:padding="5dp" android:hint="请填写手机号码" android:layout_width="wrap_content"
+		android:minWidth="200dp" android:textSize="20dp" android:id="@+id/etloginmobile"
+		android:singleLine="true" android:layout_below="@+id/textView1"
+		android:layout_alignRight="@+id/textView1" android:layout_marginTop="82dp"></EditText>
+    <Button android:layout_height="wrap_content" android:text="登录"
+	android:layout_width="wrap_content" android:id="@+id/lbnlogin"
+	android:layout_alignBaseline="@+id/etloginmobile"
+	android:layout_alignBottom="@+id/etloginmobile"
+	android:layout_alignParentRight="true"></Button>
+	<TextView android:layout_height="wrap_content" android:id="@+id/textView2"
+		android:layout_width="wrap_content" android:text="@string/logindes"
+		android:layout_below="@+id/lbnlogin" android:layout_alignParentLeft="true"
+		android:layout_marginTop="90dp"></TextView>
+    
+</RelativeLayout>
+
