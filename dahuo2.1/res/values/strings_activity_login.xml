@@ -1,0 +1,30 @@
+<resources>
+
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>    
+    <string name="prompt_mobile">手机</string>
+    <string name="prompt_password">密码</string>
+    <string name="prompt_name">姓名</string>    
+    <string name="action_sign_in_register">登录</string>
+    <string name="action_register">注册</string>    
+    <string name="action_sign_in_short">登录</string>
+    <string name="action_forgot_password">忘记密码？</string>
+    <string name="login_progress_signing_in">登录中&#8230;</string>
+    <string name="reg_progress_signing_in">正在注册&#8230;</string>
+    <string name="error_invalid_email">错误的邮件格式</string>
+    <string name="error_invalid_mobile">错误的手机格式</string>
+    <string name="error_invalid_password">密码太短了</string>
+    <string name="error_user_notexits">该用户未注册</string>
+    <string name="error_incorrect_password">密码不正确</string>
+    <string name="error_incorrect_reg">注册失败</string>
+    <string name="error_incorrect_userextis">所注册手机号已经注册过，如果忘记密码请点击“忘记密码”找回</string>
+    
+    <string name="error_field_required">这个字段必填</string>
+    <string name="action_finish"><b>完成</b></string>    
+    <string name="action_back"><b>返回</b></string>
+    <string name="exit"><b>退出</b></string>
+    <string name="cancel"><b>取消</b></string>
+
+</resources>

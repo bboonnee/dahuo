@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"          
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/contact_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="5px"
+        android:src="@drawable/ic_contact" >
+
+    </ImageView>
+
+    <RelativeLayout        
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/contact_icon"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/contact_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="username"
+            android:textSize="15dp"            
+            android:textStyle="bold" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/contact_class"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/contact_name"
+            android:layout_alignParentRight="true"            
+            android:text="class" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/contact_mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/contact_name"
+            android:text="mobile" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/contact_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/contact_mobile"
+            android:text="location" >
+        </TextView>
+    </RelativeLayout>
+
+</LinearLayout>

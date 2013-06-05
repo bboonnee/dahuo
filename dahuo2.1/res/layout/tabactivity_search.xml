@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+   android:id="@+id/layout_search"
+   >
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="68dp"
+        android:layout_marginRight="40dp"
+        android:text="搜索" />
+
+    <TextView
+        android:id="@+id/tvFromRegion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvToRegion"
+        android:layout_centerVertical="true"
+        android:text="目的地"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/startcity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvFromRegion"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="39dp"
+        android:editable="false"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/tvToRegion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/startcity"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="21dp"
+        android:layout_marginLeft="20dp"
+        android:text="出发地"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/tocity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/startcity"
+        android:layout_below="@+id/tvFromRegion"
+        android:layout_marginTop="19dp"
+        android:editable="false"
+        android:ems="10" />
+
+</RelativeLayout>

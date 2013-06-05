@@ -1,0 +1,22 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:windowBackground="@color/white"
+    >
+
+    <PreferenceCategory android:title="账户设置" >
+        <CheckBoxPreference
+            android:key="autologin"
+            android:title="自动登录" />
+    </PreferenceCategory>
+
+    <PreferenceScreen android:title="修改密码" >
+        <intent
+            android:targetClass="com.tuifi.dahuo.LoginActivity"
+            android:targetPackage="com.tuifi.dahuo" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="退出登录" >
+        <intent
+            android:targetClass="com.tuifi.dahuo.LoginActivity"
+            android:targetPackage="com.tuifi.dahuo" />
+    </PreferenceScreen>
+
+</PreferenceScreen>
