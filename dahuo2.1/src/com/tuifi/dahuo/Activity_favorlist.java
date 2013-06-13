@@ -17,19 +17,18 @@ import com.tuifi.dahuo.adapater.ShopAdapater;
 import com.tuifi.dahuo.controller.MsgController;
 import com.tuifi.dahuo.model.Msg;
 
-public class DetailActivity_postlist extends Activity {
-	private static final String LOG = "DetailActivity_postlist";
+public class Activity_favorlist extends Activity {
+	private static final String LOG = "DetailActivity_carlist";
 	ListView plist;
-	private listTask mAuthTask = null;
-	TextView city;
+	private listTask mAuthTask = null;	
 	String startcity, tocity;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_detail_postlist);
+		setContentView(R.layout.activity_favorlist);
 		ApplicationMap.allActivity.add(this);
-		plist = (ListView) findViewById(R.id.detail_postlist);
+		plist = (ListView) findViewById(R.id.detail_carlist);
 		attemptReadList();
 		findViewById(R.id.btn_back).setOnClickListener(
 				new View.OnClickListener() {
@@ -37,17 +36,13 @@ public class DetailActivity_postlist extends Activity {
 					public void onClick(View view) {
 						finish();
 					}
-				});		
+				});
 		Bundle extras = getIntent().getExtras();
 		if (extras != null) {
 			startcity = extras.getString("startcity");
 			tocity = extras.getString("tocity");
 			// 根据获取的类型读取数据
-		}
-		city = (TextView) findViewById(R.id.post_city);
-		if ((startcity != null) && (tocity != null)) {
-			city.setText(startcity + "--" + tocity);
-		}
+		}		
 	}
 
 	@Override
@@ -99,7 +94,7 @@ public class DetailActivity_postlist extends Activity {
 						try {
 							// 启动reg
 							Intent intent = new Intent(
-									DetailActivity_postlist.this,
+									Activity_favorlist.this,
 									DetailActivity.class);
 
 							Bundle b = new Bundle();
@@ -139,7 +134,7 @@ public class DetailActivity_postlist extends Activity {
 			boolean re = false;
 			try {
 				MsgController.MsgList = MsgController.getmsglistFromJson(
-						DetailActivity_postlist.this, null, null);
+						Activity_favorlist.this, startcity, tocity);
 				if (MsgController.MsgList != null)
 					return true;
 				// Thread.sleep(2000);

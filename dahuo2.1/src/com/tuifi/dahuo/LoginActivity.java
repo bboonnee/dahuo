@@ -1,9 +1,11 @@
 package com.tuifi.dahuo;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -20,13 +22,12 @@ import com.tuifi.dahuo.app.MainActivity;
 import com.tuifi.dahuo.controller.LoginController;
 import com.tuifi.dahuo.model.User;
 import com.tuifi.dahuo.tools.MD5Utils;
-import com.tuifi.dahuo.tools.formActivity;
 
 /**
  * Activity which displays a login screen to the user, offering registration as
  * well.
  */
-public  class LoginActivity extends formActivity {
+public  class LoginActivity extends Activity {
 	/**
 	 * A dummy authentication store containing known user names and passwords.
 	 * TODO: remove after connecting to a real authentication system.
@@ -54,6 +55,7 @@ public  class LoginActivity extends formActivity {
 	private View mLoginStatusView;
 	private TextView mLoginStatusMessageView, tv_error;
 	private Dialog alertDialog;	
+	public SharedPreferences preferences;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -254,9 +256,9 @@ public  class LoginActivity extends formActivity {
 				// 启动主页
 				tv_error.setText("");
 				savePreference(ApplicationMap.currentUser);
-				Intent intent = new Intent(LoginActivity.this,
+				/*Intent intent = new Intent(LoginActivity.this,
 						MainActivity.class);
-				startActivity(intent);
+				startActivity(intent);*/
 				finish();
 			} else {
 				/*
@@ -292,15 +294,5 @@ public  class LoginActivity extends formActivity {
 		}
 
 	}
-
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		// TODO Auto-generated method stub
-		if (keyCode == KeyEvent.KEYCODE_BACK) {
-			savePreference(null);
-			promptExit(this);
-			return true;
-		}
-		return super.onKeyDown(keyCode, event);
-	}
+	
 }

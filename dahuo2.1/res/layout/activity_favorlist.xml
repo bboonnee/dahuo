@@ -11,34 +11,27 @@
         android:background="@drawable/titlebar_bg_nor" >
 
         <ImageView
-            android:id="@+id/example_left"
+            android:id="@+id/btn_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/back" />
-
-        <ImageView
-            android:id="@+id/example_right"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/refresh" />
+            android:src="@drawable/btn_style_back" />
 
         <TextView
             android:id="@+id/example_center"
-            style="@style/TextView.Middle.Black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="通知列表"
-            android:textColor="@android:color/black" />
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/btn_back"
+            android:text="收藏用户列表"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" />
     </RelativeLayout>
 
     <ListView
-        android:id="@+id/postlist"
+        android:id="@+id/detail_carlist"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" >
     </ListView>

@@ -23,14 +23,14 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.tuifi.dahuo.Activity_favorlist;
+import com.tuifi.dahuo.Activity_msglist;
+import com.tuifi.dahuo.Activity_post;
 import com.tuifi.dahuo.R;
 import com.tuifi.dahuo.SearchActivity_car;
 import com.tuifi.dahuo.SearchActivity_post;
 import com.tuifi.dahuo.SearchActivity_shop;
-import com.tuifi.dahuo.app.TabActivity_list;
 import com.tuifi.dahuo.app.TabActivity_map;
-import com.tuifi.dahuo.app.TabActivity_msg;
-import com.tuifi.dahuo.app.TabActivity_post;
 import com.tuifi.dahuo.app.TabActivity_pref;
 
 /**
@@ -147,7 +147,7 @@ public class MyPagerAdapter extends PagerAdapter {
 					break;
 				//发布信息
 				case 3:
-					mainIntent.setClass(v.getContext(), TabActivity_post.class);
+					mainIntent.setClass(v.getContext(), Activity_post.class);
 					v.getContext().startActivity(mainIntent);
 					break;
 					//周边地图
@@ -162,12 +162,12 @@ public class MyPagerAdapter extends PagerAdapter {
 					break;
 					//收藏历史
 				case 6:
-					mainIntent.setClass(v.getContext(), TabActivity_list.class);
+					mainIntent.setClass(v.getContext(), Activity_favorlist.class);
 					v.getContext().startActivity(mainIntent);
 					break;
 					//推送信息
 				case 7:
-					mainIntent.setClass(v.getContext(), TabActivity_msg.class);
+					mainIntent.setClass(v.getContext(), Activity_msglist.class);
 					v.getContext().startActivity(mainIntent);
 					break;				
 

@@ -64,6 +64,8 @@
         <activity android:name="com.tuifi.dahuo.DetailActivity_shoplist" />
         <activity android:name="com.tuifi.dahuo.DetailActivity_postlist" />
         <activity android:name="com.tuifi.dahuo.DetailActivity_carlist" />
+        <activity android:name="com.tuifi.dahuo.Activity_post" />
+        <activity android:name="com.tuifi.dahuo.Activity_favorlist" />
 
         <service
             android:name="com.baidu.location.f"

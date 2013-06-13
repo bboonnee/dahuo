@@ -24,10 +24,8 @@ import com.tuifi.dahuo.controller.MsgController;
 import com.tuifi.dahuo.model.Msg;
 
 public class Activity_msglist extends Activity {
-	private static final String LOG = "Activity_msglist";
-	TextView tv_add;
+	private static final String LOG = "Activity_msglist";	
 	private listTask mAuthTask = null;
-	ImageView example_left, example_right;
 	ListView plist;
 
 	@Override
@@ -36,23 +34,16 @@ public class Activity_msglist extends Activity {
 		setContentView(R.layout.activity_msglist);
 
 		ApplicationMap.allActivity.add(this);
-
-		tv_add = (TextView) findViewById(R.id.tv_add);
-		tv_add.setText(((ApplicationMap) getApplication()).mAdd);
-		((ApplicationMap) getApplication()).mTv = tv_add;
-
 		plist = (ListView) findViewById(R.id.postlist);
-		attemptReadList();
-
-		LinearLayout container = (LinearLayout) ((ActivityGroup) getParent())
-				.getWindow().findViewById(R.id.tab_top);
-		example_right = (ImageView) container.findViewById(R.id.example_right);
-		example_right.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				attemptReadList();
-			}
-		});
+		attemptReadList();	
+		
+		findViewById(R.id.btn_back).setOnClickListener(
+				new View.OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						finish();
+					}
+				});
 	}
 
 	@Override

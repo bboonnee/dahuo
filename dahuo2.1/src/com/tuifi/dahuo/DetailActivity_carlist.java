@@ -22,7 +22,7 @@ public class DetailActivity_carlist extends Activity {
 	ListView plist;
 	private listTask mAuthTask = null;
 	TextView city;
-	String current_city;
+	String startcity, tocity;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,16 +37,16 @@ public class DetailActivity_carlist extends Activity {
 					public void onClick(View view) {
 						finish();
 					}
-				});		
+				});
 		Bundle extras = getIntent().getExtras();
 		if (extras != null) {
-			current_city = extras.getString("add");			
-			//根据获取的类型读取数据						
+			startcity = extras.getString("startcity");
+			tocity = extras.getString("tocity");
+			// 根据获取的类型读取数据
 		}
 		city = (TextView) findViewById(R.id.car_city);
-		if(current_city!=null)
-		{
-			city.setText(current_city);
+		if ((startcity != null) && (tocity != null)) {
+			city.setText(startcity + "--" + tocity);
 		}
 	}
 
@@ -138,8 +138,8 @@ public class DetailActivity_carlist extends Activity {
 			// TODO: attempt authentication against a network service.
 			boolean re = false;
 			try {
-				MsgController.MsgList = MsgController.getInfoshoplistFromJson(
-						DetailActivity_carlist.this, current_city);
+				MsgController.MsgList = MsgController.getmsglistFromJson(
+						DetailActivity_carlist.this, startcity, tocity);
 				if (MsgController.MsgList != null)
 					return true;
 				// Thread.sleep(2000);

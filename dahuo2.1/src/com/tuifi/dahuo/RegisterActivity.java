@@ -87,9 +87,9 @@ public class RegisterActivity extends constActivity {
 					@Override
 					public void onClick(View view) {
 						// 启动reg
-						Intent intent = new Intent(RegisterActivity.this,
+						/*Intent intent = new Intent(RegisterActivity.this,
 								TabActivity_pref.class);
-						startActivity(intent);
+						startActivity(intent);*/
 						finish();
 					}
 				});

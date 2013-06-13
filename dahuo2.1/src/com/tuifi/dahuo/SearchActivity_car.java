@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SearchActivity_car extends Activity {
 	TextView tv_fromcity, tv_tocity,car_add;
@@ -26,9 +27,34 @@ public class SearchActivity_car extends Activity {
 		searchcar_layout.setOnClickListener(new OnClickListener() {			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				/*Toast.makeText(getApplicationContext(), "提示：点击窗口外部关闭窗口！", 
-						Toast.LENGTH_SHORT).show();	*/
+				if(car_add.getText().equals("正在定位..."))
+				{
+					if(ApplicationMap.mAdd!=null)
+					{
+						car_add.setText(ApplicationMap.mAdd);
+						Intent intent = new Intent(SearchActivity_car.this,
+								DetailActivity_carlist.class);
+						String start = tv_fromcity.getText().toString();
+						String to = tv_tocity.getText().toString();
+						intent.putExtra("startcity", start);		
+						intent.putExtra("tocity", to);
+						startActivity(intent);
+					}else
+					{
+						Toast.makeText(getApplicationContext(), "暂时无法获取您手机的定位，请在下面选择城市搜索！", 
+						Toast.LENGTH_SHORT).show();	
+					}
+						
+				}else
+				{
+					Intent intent = new Intent(SearchActivity_car.this,
+							DetailActivity_carlist.class);
+					String start = tv_fromcity.getText().toString();
+					String to = tv_tocity.getText().toString();
+					intent.putExtra("startcity", start);		
+					intent.putExtra("tocity", to);	
+					startActivity(intent);
+				}
 			}
 		});
 	}
@@ -47,26 +73,62 @@ public class SearchActivity_car extends Activity {
 
 	// 设置搜索按钮
 	public void search_shop(View v) {
-
+		Intent intent = new Intent(SearchActivity_car.this,
+				DetailActivity_carlist.class);
+		String start = tv_fromcity.getText().toString();
+		String to = tv_tocity.getText().toString();
+		intent.putExtra("startcity", start);		
+		intent.putExtra("tocity", to);	
+		startActivity(intent);
 	}
-
+	// 设置城市
+		public void select_fromcity(View v) {
+			Intent intent = new Intent(SearchActivity_car.this,
+					CityActivity.class);	
+			String s = tv_fromcity.getText().toString();
+			intent.putExtra("add", s);
+			intent.putExtra("type", "SearchStartAdd");
+			startActivity(intent);
+		}
 	// 设置城市
 	public void select_tocity(View v) {
 		Intent intent = new Intent(SearchActivity_car.this,
 				CityActivity.class);	
 		String s = tv_tocity.getText().toString();
 		intent.putExtra("add", s);
-		intent.putExtra("type", "shopAdd");
+		intent.putExtra("type", "SearchEndAdd");
 		startActivity(intent);
 	}
 
-	// 设置城市
-	public void select_fromcity(View v) {
-		Intent intent = new Intent(SearchActivity_car.this,
-				CityActivity.class);	
-		String s = tv_fromcity.getText().toString();
-		intent.putExtra("add", s);
-		intent.putExtra("type", "postEndAdd");
-		startActivity(intent);
+	
+	@Override
+	public void onResume() {
+		super.onResume();		
+		if(ApplicationMap.SearchStartAdd!=null)
+		{
+			String add=tv_fromcity.getText().toString();
+				try{
+					add =ApplicationMap.SearchStartAdd.get(0).REGION_NAME;
+					add +=ApplicationMap.SearchStartAdd.get(1).REGION_NAME;
+					add +=ApplicationMap.SearchStartAdd.get(2).REGION_NAME;
+				}catch(Exception e)
+				{
+					e.printStackTrace();
+				}
+				tv_fromcity.setText(add);						
+		}	
+		if(ApplicationMap.SearchEndAdd!=null)
+		{
+			String add=tv_tocity.getText().toString();
+				try{
+					add =ApplicationMap.SearchEndAdd.get(0).REGION_NAME;
+					add +=ApplicationMap.SearchEndAdd.get(1).REGION_NAME;
+					add +=ApplicationMap.SearchEndAdd.get(2).REGION_NAME;
+				}catch(Exception e)
+				{
+					e.printStackTrace();
+				}
+				tv_tocity.setText(add);						
+		}		
 	}
 }

@@ -1,0 +1,130 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/titlebar_bg_nor" >
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/btn_style_back" />
+
+        <TextView
+            android:id="@+id/example_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/btn_back"
+            android:text="货源发布"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" />
+    </RelativeLayout>
+
+    <TableLayout
+        android:id="@+id/post_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <TableRow android:layout_marginTop="5dp" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="货物名称" />
+
+            <EditText
+                android:id="@+id/EtCargoName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ems="10" >
+
+                <requestFocus />
+            </EditText>
+        </TableRow>
+
+        <TableRow android:layout_marginTop="5dp" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="货物重量" />
+
+            <EditText
+                android:id="@+id/EtWeight"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ems="10" >
+            </EditText>
+        </TableRow>
+
+        <TableRow android:layout_marginTop="5dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView1"
+                android:text="出发地" />
+
+            <EditText
+                android:id="@+id/Etstartcity"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:ems="10" />
+        </TableRow>
+
+        <TableRow android:layout_marginTop="5dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="目的地" />
+
+            <EditText
+                android:id="@+id/Ettocity"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:ems="10" />
+        </TableRow>
+
+        <TableRow android:layout_marginTop="5dp" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发货日期" />
+
+            <EditText
+                android:id="@+id/Etdeadline"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:ems="10" />
+        </TableRow>
+
+        <TableRow android:layout_marginTop="5dp" >
+
+            <Button
+                android:id="@+id/btnpost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_marginTop="5dp"
+                android:text="发布" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>
