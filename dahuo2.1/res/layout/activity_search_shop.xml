@@ -5,19 +5,21 @@
     android:orientation="vertical" >
 
     <RelativeLayout
+        
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/titlebar_bg_nor" >
+        android:background="@drawable/titlebar_bg_nor"        
+         >
 
         <ImageButton
-            android:id="@+id/example_left"
+            android:id="@+id/btn_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:background="#00000000"
             android:onClick="shop_back_home"
-            android:src="@drawable/back_small" />
+            android:src="@drawable/btn_style_back" />
 
         <TextView
             android:id="@+id/example_center"
@@ -35,7 +37,7 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="fill_parent"        
         android:background="@drawable/layout_bg"
         android:orientation="vertical" >
 
@@ -43,8 +45,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/preference_item"
-            android:clickable="true"
+            android:id="@+id/searchshop_layout"
+            android:background="@drawable/preference_item"            
             android:gravity="center_vertical" >
 
             <ImageView
@@ -74,7 +76,7 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/textView1"
+                    android:id="@+id/shop_add"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
@@ -116,7 +118,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/preference_single_item" 
                 android:clickable="true"
-                android:onClick="select_fromcity"
+                android:onClick="select_shopcity"
                 android:gravity="center_vertical" >
 
                 <ImageView
@@ -124,21 +126,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginTop="15dp"
+                    android:layout_centerVertical="true"                    
                     android:scaleType="matrix"
                     android:src="@drawable/city_blue_small" />
-
-                <TextView
-                    android:id="@+id/tv_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/img_city"
-                    android:padding="8dp"
-                    android:text="选择城市"
-                    android:textColor="@color/grey"
-                    android:textSize="14sp" />
 
                 <ImageView
                     android:id="@+id/imageView1"
@@ -150,12 +140,25 @@
                     android:src="@drawable/mm_submenu" />
 
                 <TextView
-                    android:id="@+id/tv_fromcity"
+                    android:id="@+id/tv_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/imageView1"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/img_city"
+                    android:padding="8dp"
+                    android:text="选择城市"
+                    android:textColor="@color/grey"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_searchshop_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"                    
+                    android:layout_alignLeft="@+id/tv_1"
+                    android:layout_below="@+id/tv_1"
+                    android:padding="8dp"
                     android:text="北京" />
+
             </RelativeLayout>
             <Button 
       				    android:layout_width="fill_parent" 

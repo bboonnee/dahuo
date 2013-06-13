@@ -39,7 +39,7 @@ public class ApplicationMap extends Application {
 	public NotifyLister mNotifyer = null;
 	public Vibrator mVibrator01;
 	public static String TAG = "LocTestDemo";
-	public String mAdd ;
+	public static String mAdd ;
 	public String mProvince ;
 	public String mCity ;
 	public String mXian ;
@@ -47,7 +47,8 @@ public class ApplicationMap extends Application {
 	public static ArrayList<Region> postEndAdd;
 	public static ArrayList<Region> SearchStartAdd;
 	public static ArrayList<Region> SearchEndAdd;
-	public static ArrayList<Region> currentRegion;
+	public static ArrayList<Region> currentRegion;	
+	public static ArrayList<Region> shopRegion;
 	public static List<Region> regionList;
 
 	public static User currentUser;

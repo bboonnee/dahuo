@@ -8,14 +8,27 @@ import android.view.View;
 import android.widget.TextView;
 
 public class SearchActivity_post extends Activity {
-	TextView tv_fromcity, tv_tocity;
+	TextView tv_fromcity, tv_tocity,post_add;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_search_post);
-		tv_fromcity = (TextView) findViewById(R.id.tv_fromcity);
-		tv_tocity = (TextView) findViewById(R.id.tv_tocity);
+		tv_fromcity = (TextView) findViewById(R.id.tv_searchpost_fromcity);
+		tv_tocity = (TextView) findViewById(R.id.tv_searchpost_tocity);
+		
+		post_add  = (TextView) findViewById(R.id.post_add);
+		if(ApplicationMap.mAdd!=null)
+			post_add.setText(ApplicationMap.mAdd);
+		findViewById(R.id.searchpost_layout).setOnClickListener(
+				new View.OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						/*Intent intent = new Intent(SearchActivity_shop.this,
+								LoginActivity.class);
+						startActivity(intent);*/
+					}
+				});
 	}
 
 	@Override

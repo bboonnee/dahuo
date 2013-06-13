@@ -32,7 +32,7 @@ public class HttpUtil {
 	private static String LOG = "HttpUtil";
 	// 创建HttpClient对象
 	public static HttpClient httpClient;
-	public static final String SERVER_URL = "http://192.168.1.103/";
+	public static final String SERVER_URL = "http://192.168.1.8/";
 	//public static final String SERVER_URL = "http://54.251.118.17/";
 	public static final String BASE_URL = SERVER_URL+"dahuophp/";	
 	public static final String UPDATE_URL = SERVER_URL+"down/version.json";

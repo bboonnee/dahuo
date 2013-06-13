@@ -28,63 +28,48 @@
 
     <application
         android:name="com.tuifi.dahuo.ApplicationMap"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
-        <activity android:name="com.tuifi.dahuo.app.MainActivity" >
-        </activity>
-        <activity android:name="com.tuifi.dahuo.app.TabActivity_list" >
-        </activity>
-        <activity android:name="com.tuifi.dahuo.app.TabActivity_post" >
-        </activity>
-        <activity android:name="com.tuifi.dahuo.app.TabActivity_search" >
-        </activity>
-        <activity android:name="com.tuifi.dahuo.app.TabActivity_msg" >
-        </activity>
-        <activity android:name="com.tuifi.dahuo.app.TabActivity_map" >
-        </activity>
+        <activity android:name="com.tuifi.dahuo.app.MainActivity" />
+        <activity android:name="com.tuifi.dahuo.app.TabActivity_list" />
+        <activity android:name="com.tuifi.dahuo.app.TabActivity_post" />
+        <activity android:name="com.tuifi.dahuo.app.TabActivity_search" />
+        <activity android:name="com.tuifi.dahuo.app.TabActivity_msg" />
+        <activity android:name="com.tuifi.dahuo.app.TabActivity_map" />
         <activity android:name="com.tuifi.dahuo.RegisterActivity" />
-        <activity android:name="com.tuifi.dahuo.DetailActivity" >
-        </activity>
-        <activity android:name="com.tuifi.dahuo.CityActivity" >
-        </activity>
+        <activity android:name="com.tuifi.dahuo.DetailActivity" />
+        <activity android:name="com.tuifi.dahuo.CityActivity" />
         <activity
             android:name="com.tuifi.dahuo.LoginActivity"
             android:windowSoftInputMode="adjustResize|stateVisible" >
         </activity>
-        <activity
-            android:name="com.tuifi.dahuo.SpalshActivity"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name="com.tuifi.dahuo.app.TabActivity_pref"
-            android:theme="@style/PreferencesTheme" >
-        </activity>
-
-        <service
-            android:name="com.baidu.location.f"
-            android:enabled="true"
-            android:process=":remote" >
-        </service>
-
-        <activity
-            android:name="com.tuifi.dahuo.PersoninfoActivity"
-            android:label="@string/title_activity_info_preference" >
-        </activity>
-        <activity
-            android:name="com.tuifi.dahuo.zaker.MainZakerActivity"
-            android:label="@string/app_name" >
+        <activity android:name="com.tuifi.dahuo.SpalshActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.tuifi.dahuo.Activity_msglist" />        
+        <activity
+            android:name="com.tuifi.dahuo.app.TabActivity_pref"
+            android:theme="@style/PreferencesTheme" >
+        </activity>
+        <activity android:name="com.tuifi.dahuo.PersoninfoActivity" />
+        <activity android:name="com.tuifi.dahuo.zaker.MainZakerActivity" />
+        <activity android:name="com.tuifi.dahuo.Activity_msglist" />
         <activity android:name="com.tuifi.dahuo.SearchActivity_shop" />
         <activity android:name="com.tuifi.dahuo.SearchActivity_car" />
         <activity android:name="com.tuifi.dahuo.SearchActivity_post" />
-        
+        <activity android:name="com.tuifi.dahuo.DetailActivity_shoplist" />
+        <activity android:name="com.tuifi.dahuo.DetailActivity_postlist" />
+        <activity android:name="com.tuifi.dahuo.DetailActivity_carlist" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+        </service>
     </application>
 
 </manifest>

@@ -4,7 +4,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <RelativeLayout
+    <RelativeLayout        
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/titlebar_bg_nor" >
@@ -28,9 +28,6 @@
             android:layout_centerVertical="true"
             android:text="搜索货源信息"
             android:textColor="@android:color/black" />
-
-       
-
     </RelativeLayout>
 
     <LinearLayout
@@ -43,6 +40,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:id="@+id/searchpost_layout"
             android:background="@drawable/preference_item"
             android:clickable="true"
             android:gravity="center_vertical" >
@@ -74,7 +72,7 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/textView1"
+                    android:id="@+id/post_add"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
@@ -100,7 +98,6 @@
                 android:layout_centerVertical="true"
                 android:background="#00000000"
                 android:src="@drawable/mm_submenu" />
-
         </RelativeLayout>
 
         <LinearLayout
@@ -114,10 +111,10 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/preference_single_item" 
+                android:background="@drawable/preference_single_item"
                 android:clickable="true"
-                android:onClick="select_fromcity"
-                android:gravity="center_vertical" >
+                android:gravity="center_vertical"
+                android:onClick="select_fromcity" >
 
                 <ImageView
                     android:id="@+id/img_city"
@@ -129,17 +126,6 @@
                     android:scaleType="matrix"
                     android:src="@drawable/city_blue_small" />
 
-                <TextView
-                    android:id="@+id/tv_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/img_city"
-                    android:padding="8dp"
-                    android:text="出发地"
-                    android:textColor="@color/grey"
-                    android:textSize="14sp" />
-
                 <ImageView
                     android:id="@+id/imageView1"
                     android:layout_width="wrap_content"
@@ -150,22 +136,34 @@
                     android:src="@drawable/mm_submenu" />
 
                 <TextView
-                    android:id="@+id/tv_fromcity"
+                    android:id="@+id/tv_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/imageView1"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/img_city"
+                    android:padding="8dp"
+                    android:text="出发城市"
+                    android:textColor="@color/grey"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_searchpost_fromcity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/tv_1"
+                    android:layout_below="@+id/tv_1"
+                    android:padding="8dp"
                     android:text="北京" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"                
-                android:clickable="true"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/preference_single_item"
-                android:onClick="select_tocity"
-                android:gravity="center_vertical" >
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:onClick="select_tocity" >
 
                 <ImageView
                     android:id="@+id/img_city"
@@ -177,16 +175,7 @@
                     android:scaleType="matrix"
                     android:src="@drawable/city_brone_small" />
 
-                <TextView
-                    android:id="@+id/tv_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/img_city"
-                    android:padding="8dp"
-                    android:text="目的地"
-                    android:textColor="@color/grey"
-                    android:textSize="14sp" />
+              
 
                 <ImageView
                     android:id="@+id/imageView1"
@@ -197,29 +186,41 @@
                     android:scaleType="matrix"
                     android:src="@drawable/mm_submenu" />
 
-                <TextView
-                    android:id="@+id/tv_tocity"
+               <TextView
+                    android:id="@+id/tv_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/imageView1"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/img_city"
+                    android:padding="8dp"
+                    android:text="到达城市"
+                    android:textColor="@color/grey"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_searchpost_tocity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"                    
+                    android:layout_alignLeft="@+id/tv_2"
+                    android:layout_below="@+id/tv_2"
+                    android:padding="8dp"
                     android:text="请选择" />
             </RelativeLayout>
-            <Button 
-      				    android:layout_width="fill_parent" 
-        				android:layout_height="wrap_content"
-        				android:layout_marginTop="14dp"
-        				android:layout_marginBottom="14dp"
-        				android:layout_marginLeft="12dp"
-        				android:layout_marginRight="12dp"
-        				android:padding="4dp" 
-        				android:text="搜索"
-        				android:textSize="14sp"		
-						android:textColor="#fff"
-						android:gravity="center"
-						android:background="@drawable/btn_style_orange"
-						android:onClick="search_shop"
-      				    />     	
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/btn_style_orange"
+                android:gravity="center"
+                android:onClick="search_shop"
+                android:padding="4dp"
+                android:text="搜索"
+                android:textColor="#fff"
+                android:textSize="14sp" />
         </LinearLayout>
     </LinearLayout>
 

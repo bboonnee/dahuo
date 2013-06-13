@@ -38,6 +38,7 @@ public class CityActivity extends constActivity {
 		if (extras != null) {
 			add = extras.getString("add");
 			type = extras.getString("type");
+			//根据获取的类型读取数据
 			if (type.equals("postStartAdd")) {
 				currentRegion = ApplicationMap.postStartAdd ;
 			} else if (type.equals("postEndAdd")) {
@@ -46,7 +47,10 @@ public class CityActivity extends constActivity {
 				currentRegion = ApplicationMap.SearchStartAdd ;
 			} else if (type.equals("SearchEndAdd")) {
 				currentRegion = ApplicationMap.SearchEndAdd ;
+			} else if (type.equals("shopciy")) {
+				currentRegion = ApplicationMap.shopRegion ;
 			}
+			
 		}
 		// actionBar.setDisplayHomeAsUpEnabled(true);
 
@@ -62,7 +66,13 @@ public class CityActivity extends constActivity {
 			}
 			 
 		}
-		
+		findViewById(R.id.btn_back).setOnClickListener(
+				new View.OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						finish();
+					}
+				});		
 
 		findViewById(R.id.btnSelectCity).setOnClickListener(
 				new View.OnClickListener() {
@@ -96,6 +106,11 @@ public class CityActivity extends constActivity {
 							ApplicationMap.SearchEndAdd.add(pcode);
 							ApplicationMap.SearchEndAdd.add(ccode);
 							ApplicationMap.SearchEndAdd.add(xcode);
+						}else if (type.equals("shopciy")) {
+							ApplicationMap.shopRegion = new ArrayList<Region>();
+							ApplicationMap.shopRegion.add(pcode);
+							ApplicationMap.shopRegion.add(ccode);
+							ApplicationMap.shopRegion.add(xcode);
 						}
 						finish();
 					}

@@ -4,30 +4,53 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     tools:context=".CityActivity" >
-
-    <Spinner
-        android:id="@+id/spinnerProvince"
-        android:layout_width="wrap_content"
+<RelativeLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp" />
+        android:background="@drawable/titlebar_bg_nor" >
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/btn_style_back" />
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_centerHorizontal="true"
+             android:layout_centerVertical="true"
+             android:text="城市选择"
+             android:textColor="@android:color/white"
+             android:textSize="24sp" />
+		
+    </RelativeLayout>
+    <Spinner
+        android:id="@+id/spinnerProvince"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp" />
 
     <Spinner
         android:id="@+id/spinnerCity"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp" />
+        android:layout_marginTop="15dp" />
 
     <Spinner
         android:id="@+id/spinnerXian"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="47dp" />
+        android:layout_marginTop="15dp" />
 
     <Button
         android:id="@+id/btnSelectCity"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
+        android:background="@drawable/btn_style_orange" 
         android:text="选择" />
 
 </LinearLayout>

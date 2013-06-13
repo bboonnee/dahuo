@@ -108,7 +108,7 @@ public  class LoginActivity extends formActivity {
 		alertDialog = new AlertDialog.Builder(LoginActivity.this)
 				.setTitle("您的账户不存在")
 				.setMessage("您需要注册新用户么？")
-				.setIcon(R.drawable.ic_launcher)
+				.setIcon(R.drawable.logo)
 				.setPositiveButton("注册", new DialogInterface.OnClickListener() {
 
 					@Override

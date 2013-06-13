@@ -22,6 +22,7 @@ public class MsgController extends ModelController implements Serializable {
 	private static final long serialVersionUID = 1L;
 	public static String LOG = "UserController";
 	public static List<Msg> MsgList;
+	public static List<Msg> ShopList;
 	
 	// search
 	public static List<Msg> getmsglistFromJson(Context context,String startadd,String endadd) {
@@ -65,7 +66,7 @@ public class MsgController extends ModelController implements Serializable {
 	}
 //
 	// search
-		public static List<Msg> getInfoshoplistFromJson(Context context,String startadd,String endadd) {
+		public static List<Msg> getInfoshoplistFromJson(Context context,String searchshopcity) {
 			// 每次loadlist的时候即出发了修改button的事件
 			Log.d(LOG, "getInfoshoplistFromJson");
 			List<Msg> list = new ArrayList<Msg>();
@@ -74,10 +75,8 @@ public class MsgController extends ModelController implements Serializable {
 				// 使用Map封装请求参数
 				Map<String, String> map = new HashMap<String, String>();
 				map.put("do", "getshoplist");
-				if(startadd!=null)
-				map.put("startadd", startadd);
-				if(endadd!=null)
-				map.put("endadd", endadd);			
+				if(searchshopcity!=null)
+				map.put("searchshopcity", searchshopcity);						
 				
 				data = queryArraystatic(map, 0);
 				String t = data.getString(0);

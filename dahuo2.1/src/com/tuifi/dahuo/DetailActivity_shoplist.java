@@ -1,10 +1,6 @@
 package com.tuifi.dahuo;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.Activity;
-import android.app.ActivityGroup;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -14,8 +10,6 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -23,42 +17,43 @@ import com.tuifi.dahuo.adapater.ShopAdapater;
 import com.tuifi.dahuo.controller.MsgController;
 import com.tuifi.dahuo.model.Msg;
 
-public class Activity_msglist extends Activity {
-	private static final String LOG = "Activity_msglist";
-	TextView tv_add;
-	private listTask mAuthTask = null;
-	ImageView example_left, example_right;
+public class DetailActivity_shoplist extends Activity {
+	private static final String LOG = "DetailActivity_shoplist";
 	ListView plist;
+	private listTask mAuthTask = null;
+	TextView shop_city;
+	String current_city;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_msglist);
-
+		setContentView(R.layout.activity_detail_shoplist);
 		ApplicationMap.allActivity.add(this);
-
-		tv_add = (TextView) findViewById(R.id.tv_add);
-		tv_add.setText(((ApplicationMap) getApplication()).mAdd);
-		((ApplicationMap) getApplication()).mTv = tv_add;
-
-		plist = (ListView) findViewById(R.id.postlist);
+		plist = (ListView) findViewById(R.id.detail_shoplist);
 		attemptReadList();
-
-		LinearLayout container = (LinearLayout) ((ActivityGroup) getParent())
-				.getWindow().findViewById(R.id.tab_top);
-		example_right = (ImageView) container.findViewById(R.id.example_right);
-		example_right.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				attemptReadList();
-			}
-		});
+		findViewById(R.id.btn_back).setOnClickListener(
+				new View.OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						finish();
+					}
+				});		
+		Bundle extras = getIntent().getExtras();
+		if (extras != null) {
+			current_city = extras.getString("add");			
+			//根据获取的类型读取数据						
+		}
+		shop_city = (TextView) findViewById(R.id.shop_city);
+		if(current_city!=null)
+		{
+			shop_city.setText(current_city);
+		}
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_msglist, menu);
+		getMenuInflater().inflate(R.menu.detail_activity_shoplist, menu);
 		return true;
 	}
 
@@ -86,41 +81,11 @@ public class Activity_msglist extends Activity {
 		}
 	}
 
-	private void refreshListView(String value) {
-		ShopAdapater ctadp = new ShopAdapater(Activity_msglist.this);
-		if (MsgController.MsgList == null)
-			return;
-		if (plist == null)
-			return;
-		if (value == null || value.trim().length() == 0) {
-			ctadp.setadaptList(MsgController.MsgList);
-			plist.setAdapter(ctadp);
-			return;
-		}
-		List<Msg> tmpList = new ArrayList<Msg>();
-		if (MsgController.MsgList == null)
-			return;
-
-		for (Msg msg : MsgController.MsgList) {
-			// 筛选符合value关键字的list
-			if (msg.getremark() != null)
-				if (msg.getremark().indexOf(value) >= 0) {
-					tmpList.add(msg);
-					continue;
-				}
-
-		}
-		// if (tmpList.size() == 0) return;
-		ctadp.setadaptList(tmpList);
-		plist.setAdapter(ctadp);
-		plist.invalidateViews();
-	}
-
 	private void loadListOffer() {
 
 		// plist = (ListView) findViewById(R.id.list_plist);
 		if (MsgController.MsgList != null) {
-			ShopAdapater adapater = new ShopAdapater(Activity_msglist.this);
+			ShopAdapater adapater = new ShopAdapater(this);
 			// adapater.removeAll();
 			plist.setOnItemClickListener(new OnItemClickListener() {
 				public void onItemClick(AdapterView<?> lv, View view, int pos,
@@ -133,7 +98,8 @@ public class Activity_msglist extends Activity {
 						// String id = obj.toString();
 						try {
 							// 启动reg
-							Intent intent = new Intent(Activity_msglist.this,
+							Intent intent = new Intent(
+									DetailActivity_shoplist.this,
 									DetailActivity.class);
 
 							Bundle b = new Bundle();
@@ -157,7 +123,7 @@ public class Activity_msglist extends Activity {
 			}
 		}
 		// hide the keyboard
-		InputMethodManager imm = (InputMethodManager) Activity_msglist.this
+		InputMethodManager imm = (InputMethodManager) this
 				.getSystemService(android.content.Context.INPUT_METHOD_SERVICE);
 		try {
 			imm.hideSoftInputFromWindow(plist.getWindowToken(), 0);
@@ -166,18 +132,14 @@ public class Activity_msglist extends Activity {
 		}
 	}
 
-	/**
-	 * Represents an asynchronous login/registration task used to authenticate
-	 * the user.
-	 */
 	public class listTask extends AsyncTask<Void, Void, Boolean> {
 		@Override
 		protected Boolean doInBackground(Void... params) {
 			// TODO: attempt authentication against a network service.
 			boolean re = false;
 			try {
-				MsgController.MsgList = MsgController.getmsglistFromJson(
-						Activity_msglist.this, null, null);
+				MsgController.MsgList = MsgController.getInfoshoplistFromJson(
+						DetailActivity_shoplist.this, current_city);
 				if (MsgController.MsgList != null)
 					return true;
 				// Thread.sleep(2000);
@@ -209,4 +171,5 @@ public class Activity_msglist extends Activity {
 			// showProgress(false);
 		}
 	}
+
 }

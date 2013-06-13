@@ -16,11 +16,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.tuifi.dahuo.app.MainActivity;
+import com.tuifi.dahuo.app.TabActivity_pref;
 import com.tuifi.dahuo.controller.LoginController;
 import com.tuifi.dahuo.model.User;
 import com.tuifi.dahuo.tools.MD5Utils;
 import com.tuifi.dahuo.tools.constActivity;
+import com.tuifi.dahuo.zaker.MainZakerActivity;
 
 /**
  * 2 需要判断是否已经注册 2 需要返回登录界面
@@ -87,7 +88,7 @@ public class RegisterActivity extends constActivity {
 					public void onClick(View view) {
 						// 启动reg
 						Intent intent = new Intent(RegisterActivity.this,
-								LoginActivity.class);
+								TabActivity_pref.class);
 						startActivity(intent);
 						finish();
 					}
@@ -247,7 +248,7 @@ public class RegisterActivity extends constActivity {
 				// 启动主页
 				savePreference();
 				Intent intent = new Intent(RegisterActivity.this,
-						MainActivity.class);
+						MainZakerActivity.class);
 				startActivity(intent);
 				finish();
 			} else {

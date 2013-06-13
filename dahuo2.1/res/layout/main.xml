@@ -41,18 +41,18 @@
 		            android:layout_height="fill_parent"
 		            android:layout_gravity="center_horizontal">
 		            
-		            
 		             <TextView
-				        android:id="@+id/mynum"
-				        android:layout_width="wrap_content"
-				        android:layout_height="wrap_content"
-				        android:layout_alignParentTop="true"
-		                android:layout_marginTop="15dp"
-		                android:layout_marginLeft="5dp"
-		                android:gravity="center"
-		                android:textStyle="bold"
-		                android:textColor="@android:color/white"
-		                android:background="@drawable/rootblock_pageinfo_blue_bg"/>
+		                 android:id="@+id/mynum"
+		                 android:layout_width="wrap_content"
+		                 android:layout_height="wrap_content"
+		                 android:layout_alignParentTop="true"
+		                 android:layout_marginLeft="5dp"
+		                 android:layout_marginTop="15dp"
+		                 android:background="@drawable/rootblock_pageinfo_blue_bg"
+		                 android:gravity="center"
+		                 android:textColor="@android:color/white"
+		                 android:textStyle="bold"
+		                 android:visibility="gone" />
 		            
 		            <Button
 		                android:id="@+id/add"
@@ -73,18 +73,21 @@
 		            <Button
 		                android:id="@+id/appstroe"
 		                android:layout_width="wrap_content"
-		            	android:layout_height="wrap_content"
+		                android:layout_height="wrap_content"
 		                android:layout_above="@id/set"
 		                android:layout_marginBottom="15dp"
-		                android:background="@drawable/rootblock_appstroe_selector"/>
+		                android:background="@drawable/rootblock_appstroe_selector"
+		                android:visibility="gone" />
 		            
 		            <Button
 		                android:id="@+id/download"
 		                android:layout_width="wrap_content"
-		            	android:layout_height="wrap_content"
+		                android:layout_height="wrap_content"
 		                android:layout_above="@id/appstroe"
 		                android:layout_marginBottom="15dp"
-		                android:background="@drawable/rootblock_download_selector"/>
+		                android:background="@drawable/rootblock_download_selector"
+		                android:visibility="gone" />
+
 	        </RelativeLayout>
 	        
 	     </LinearLayout>

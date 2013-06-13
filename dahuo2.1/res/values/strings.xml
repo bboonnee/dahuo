@@ -52,5 +52,6 @@
     <string name="title_activity_info_preference">InfoPreferenceActivity</string>
     <string name="title_activity_activity_msglist">Activity_msglist</string>
     <string name="title_activity_search_activity_shop">SearchActivity_shop</string>
+    <string name="title_activity_detail_activity_shoplist">DetailActivity_shoplist</string>
 
 </resources>
